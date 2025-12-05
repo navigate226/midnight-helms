@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "proof-server.fullname" . }}
+  labels:
+    app: {{ include "proof-server.name" . }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ include "proof-server.name" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ include "proof-server.name" . }}
+    spec:
+      containers:
+        - name: proof-server
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          args:
+            - "midnight-proof-server"
+            - "--network"
+            - "{{ .Values.network.name }}"
+          ports:
+            - containerPort: {{ .Values.service.port }}
+

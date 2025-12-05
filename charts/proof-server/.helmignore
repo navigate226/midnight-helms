@@ -1,0 +1,28 @@
+# Common VCS dirs
+.git/
+.gitignore
+.gitattributes
+
+# Node / build artifacts
+node_modules/
+dist/
+tmp/
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE / editor files
+*.iml
+.idea/
+.vscode/
+
+# Backup files
+*~
+*.bak
+*.tmp
+
+# Helm chart packaging noise
+charts/
+Chart.lock

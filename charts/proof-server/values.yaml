@@ -1,0 +1,29 @@
+replicaCount: 1
+
+image:
+  repository: midnightnetwork/proof-server
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: "4.0.0"
+
+nameOverride: ""
+fullnameOverride: ""
+
+network:
+  name: testnet
+
+service:
+  type: ClusterIP
+  port: 6300
+
+ingress:
+  enabled: false
+  className: ""
+  annotations: {}
+  hosts:
+    - host: proof.local
+      paths:
+        - path: /
+          pathType: Prefix
+  tls: []
+

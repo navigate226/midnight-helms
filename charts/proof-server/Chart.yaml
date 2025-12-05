@@ -1,0 +1,8 @@
+apiVersion: v2
+name: proof-server
+description: A Helm chart for midnightnetwork proof server
+type: application
+version: 0.1.0
+appVersion: "4.0.0"
+
+icon: "https://midnight.network/brand-hub/logo-compact-light.svg"
